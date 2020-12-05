@@ -8,10 +8,9 @@ public class CPU extends PCComponent
     private double cpuClockSpeed;
     private double cpuBoostSpeed;
     private int logicalCoreCount;
-    private boolean overclockPotential;// yes or no
-    private String cpuPower; //LOW, AVERAGE, HIGH
+    private boolean isOverclockable;
 
-    public CPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount)
+    public CPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable)
     {
         this.cpuManufacturer = cpuManufacturer;
         this.cpuModel = cpuModel;
@@ -19,6 +18,7 @@ public class CPU extends PCComponent
         this.cpuClockSpeed = cpuClockSpeed;
         this.cpuBoostSpeed = cpuBoostSpeed;
         this.logicalCoreCount = logicalCoreCount;
+        this.isOverclockable = isOverclockable;
     }
     @Override
     public void printComponentInfo()
@@ -86,23 +86,13 @@ public class CPU extends PCComponent
         this.logicalCoreCount = logicalCoreCount;
     }
 
-    public boolean isOverclockPotential()
+    public boolean isOverclockable()
     {
-        return overclockPotential;
+        return isOverclockable;
     }
 
-    public void setOverclockPotential(boolean overclockPotential)
+    public void setOverclockable(boolean overclockable)
     {
-        this.overclockPotential = overclockPotential;
-    }
-
-    public String getCpuPower()
-    {
-        return cpuPower;
-    }
-
-    public void setCpuPower(String cpuPower)
-    {
-        this.cpuPower = cpuPower;
+        isOverclockable = overclockable;
     }
 }

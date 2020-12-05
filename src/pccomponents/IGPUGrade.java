@@ -2,5 +2,7 @@ package pccomponents;
 
 public interface IGPUGrade
 {
-    void setGPUPotential(boolean overclockPotential, String cpuPower);
+    boolean hasOverclockPotential();
+    void setOverclockPotential();
+    String getGpuPower();
 }

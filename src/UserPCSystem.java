@@ -1,7 +1,8 @@
 import pccomponents.*;
 
-public class UserPCSystem implements IPCSystems,Cloneable
+public class UserPCSystem implements IPCSystems
 {
+    String name;
     CPU cpu;
     RAM ram;
     OS os;
@@ -9,8 +10,9 @@ public class UserPCSystem implements IPCSystems,Cloneable
     Motherboard motherboard;
     Disk disk;
 
-    public UserPCSystem(CPU cpu, RAM ram, OS os, GPU gpu, Motherboard motherboard, Disk disk)
+    public UserPCSystem(String name, CPU cpu, RAM ram, OS os, GPU gpu, Motherboard motherboard, Disk disk)
     {
+        this.name = name;
         this.cpu = cpu;
         this.ram = ram;
         this.os = os;
@@ -26,7 +28,7 @@ public class UserPCSystem implements IPCSystems,Cloneable
     @Override
     public void printSystem()
     {
-        System.out.println("System:");
+        System.out.println("System: "+getName());
         cpu.printComponentInfo();
         motherboard.printComponentInfo();
         ram.printComponentInfo();
@@ -37,7 +39,7 @@ public class UserPCSystem implements IPCSystems,Cloneable
     public Memento createMemento()
     {
         System.out.println("System state saved.");
-        return new Memento(new UserPCSystem(new CPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount()),
+        return new Memento(new UserPCSystem(name, new CPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable()),
                 new RAM(ram.getRamAmount(), ram.getRamCL(), ram.getRamClockSpeed(), ram.getRamType(), ram.getManufacturer(), ram.getModel()),
                 new OS(os.getOsName(), os.getOsBits()),
                 new GPU(gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock()),
@@ -46,7 +48,6 @@ public class UserPCSystem implements IPCSystems,Cloneable
     }
     public void restoreFromMemento(Memento memento)
     {
-
          try
          {
              UserPCSystem previousState = memento.getSavedState();
@@ -124,4 +125,13 @@ public class UserPCSystem implements IPCSystems,Cloneable
         this.disk = disk;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 }
