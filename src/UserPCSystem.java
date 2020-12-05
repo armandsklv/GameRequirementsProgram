@@ -46,13 +46,22 @@ public class UserPCSystem implements IPCSystems,Cloneable
     }
     public void restoreFromMemento(Memento memento)
     {
-         UserPCSystem previousState = memento.getSavedState();
-         this.disk = previousState.getDisk();
-         this.gpu = previousState.getGpu();
-         this.cpu = previousState.getCpu();
-         this.ram = previousState.getRam();
-         this.motherboard = previousState.getMotherboard();
-         this.os = previousState.getOs();
+
+         try
+         {
+             UserPCSystem previousState = memento.getSavedState();
+             this.disk = previousState.getDisk();
+             this.gpu = previousState.getGpu();
+             this.cpu = previousState.getCpu();
+             this.ram = previousState.getRam();
+             this.motherboard = previousState.getMotherboard();
+             this.os = previousState.getOs();
+             System.out.println("System restored to previous state;");
+         }
+         catch(NullPointerException npe)
+         {
+             System.out.println("There are no more previous states for this system!");
+         }
     }
 
     public CPU getCpu()
