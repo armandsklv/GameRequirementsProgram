@@ -1,5 +1,6 @@
 public class Game
 {
-    private GameRequirements minimumRequirements;
-    private GameRequirements recommendedRequirements;
+    private String name;
+    private MinimumRequirements minimumRequirements;
+    private RecommendedRequirements recommendedRequirements;
 }
