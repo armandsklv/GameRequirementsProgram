@@ -9,8 +9,9 @@ public class CPU extends PCComponent
     private double cpuBoostSpeed;
     private int logicalCoreCount;
     private boolean isOverclockable;
+    private int benchmarkScore;
 
-    public CPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable)
+    public CPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
     {
         this.cpuManufacturer = cpuManufacturer;
         this.cpuModel = cpuModel;
@@ -19,6 +20,7 @@ public class CPU extends PCComponent
         this.cpuBoostSpeed = cpuBoostSpeed;
         this.logicalCoreCount = logicalCoreCount;
         this.isOverclockable = isOverclockable;
+        this.benchmarkScore = benchmarkScore;
     }
     @Override
     public void printComponentInfo()
@@ -94,5 +96,15 @@ public class CPU extends PCComponent
     public void setOverclockable(boolean overclockable)
     {
         isOverclockable = overclockable;
+    }
+
+    public int getBenchmarkScore()
+    {
+        return benchmarkScore;
+    }
+
+    public void setBenchmarkScore(int benchmarkScore)
+    {
+        this.benchmarkScore = benchmarkScore;
     }
 }

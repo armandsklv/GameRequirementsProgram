@@ -10,6 +10,7 @@ public class UserPCSystem implements IPCSystems
     Motherboard motherboard;
     Disk disk;
 
+
     public UserPCSystem(String name, CPU cpu, RAM ram, OS os, GPU gpu, Motherboard motherboard, Disk disk)
     {
         this.name = name;
@@ -39,10 +40,10 @@ public class UserPCSystem implements IPCSystems
     public Memento createMemento()
     {
         System.out.println("System state saved.");
-        return new Memento(new UserPCSystem(name, new CPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable()),
+        return new Memento(new UserPCSystem(name, new CPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore()),
                 new RAM(ram.getRamAmount(), ram.getRamCL(), ram.getRamClockSpeed(), ram.getRamType(), ram.getManufacturer(), ram.getModel()),
                 new OS(os.getOsName(), os.getOsBits()),
-                new GPU(gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock()),
+                new GPU(gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore()),
                 new Motherboard(motherboard.getChipsetType(), motherboard.getCpuManufacturer(), motherboard.getModel(), motherboard.getManufacturer(), motherboard.getSocketType()),
                 new Disk(disk.getDiskModel(), disk.getDiskManufacturer(), disk.getDiskType(), disk.getDiskSpace())));
     }

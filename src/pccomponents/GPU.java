@@ -8,10 +8,10 @@ public class GPU extends PCComponent
     private double gpuVRAMClockSpeed;
     private double gpuClockSpeed;
     private double gpuBoostClock;
-    private boolean overclockPotential;// yes or no
-    private String gpuPower; //LOW, AVERAGE, HIGH
+    private int benchmarkScore;
 
-    public GPU(String gpuModel, String manufacturer, double gpuVRAMAmount, double gpuVRAMClockSpeed, double gpuClockSpeed, double gpuBoostClock)
+
+    public GPU(String gpuModel, String manufacturer, double gpuVRAMAmount, double gpuVRAMClockSpeed, double gpuClockSpeed, double gpuBoostClock, int benchmarkScore)
     {
         this.gpuModel = gpuModel;
         this.manufacturer = manufacturer;
@@ -19,6 +19,7 @@ public class GPU extends PCComponent
         this.gpuVRAMClockSpeed = gpuVRAMClockSpeed;
         this.gpuClockSpeed = gpuClockSpeed;
         this.gpuBoostClock = gpuBoostClock;
+        this.benchmarkScore = benchmarkScore;
     }
 
     @Override
@@ -87,23 +88,13 @@ public class GPU extends PCComponent
         this.gpuBoostClock = gpuBoostClock;
     }
 
-    public boolean isOverclockPotential()
+    public int getBenchmarkScore()
     {
-        return overclockPotential;
+        return benchmarkScore;
     }
 
-    public void setOverclockPotential(boolean overclockPotential)
+    public void setBenchmarkScore(int benchmarkScore)
     {
-        this.overclockPotential = overclockPotential;
-    }
-
-    public String getGpuPower()
-    {
-        return gpuPower;
-    }
-
-    public void setGpuPower(String gpuPower)
-    {
-        this.gpuPower = gpuPower;
+        this.benchmarkScore = benchmarkScore;
     }
 }
