@@ -1,0 +1,35 @@
+{
+  "name": "Forza Horizon 4",
+  "minimumRequirements": [
+    {
+      "VertexShader": 5.0,
+      "PixelShader": 5.0,
+      "AmdCpu": "",
+      "IntelCpu": "Intel Core i3-4170",
+      "AMDGpu": "AMD R7 250x",
+      "nvidiaGpu": "NVIDIA GeForce 650 Ti",
+      "cpuCoreCount": 0,
+      "cpuClockSpeed": 0,
+      "ram": 8,
+      "os": "Windows 10",
+      "gpuVRAM": 2.0,
+      "diskSpace": 65
+    }
+  ],
+  "recommendedRequirements": [
+    {
+      "VertexShader": 5.1,
+      "PixelShader": 5.1,
+      "AmdCpu": "",
+      "IntelCpu": "Intel Core i7-3820",
+      "AMDGpu": "AMD R9 290x",
+      "nvidiaGpu": "NVIDIA GeForce GTX 970",
+      "cpuCoreCount": 0,
+      "cpuClockSpeed": 0,
+      "ram": 12,
+      "os": "Windows 10",
+      "gpuVRAM": 4.0,
+      "diskSpace": 65
+    }
+  ]
+}

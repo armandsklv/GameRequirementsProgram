@@ -1,0 +1,35 @@
+{
+  "name": "Cyberpunk 2077",
+  "minimumRequirements": [
+    {
+      "VertexShader": 5.0,
+      "PixelShader": 5.0,
+      "AmdCpu": "AMD FX-8310",
+      "IntelCpu": "Intel Core i5-3570K",
+      "AMDGpu": "AMD Radeon RX 470",
+      "nvidiaGpu": "NVIDIA GeForce GTX 780",
+      "cpuCoreCount": 0,
+      "cpuClockSpeed": 0,
+      "ram": 8,
+      "os": "Windows 7",
+      "gpuVRAM": 3.0,
+      "diskSpace": 70
+    }
+  ],
+  "recommendedRequirements": [
+    {
+      "VertexShader": 5.1,
+      "PixelShader": 5.1,
+      "AmdCpu": "AMD Ryzen 3 3200G",
+      "IntelCpu": "Intel Core i7-4790",
+      "AMDGpu": "AMD Radeon R9 Fury",
+      "nvidiaGpu": "NVIDIA GeForce GTX 1060",
+      "cpuCoreCount": 0,
+      "cpuClockSpeed": 0,
+      "ram": 12,
+      "os": "Windows 10",
+      "gpuVRAM": 6.0,
+      "diskSpace": 70
+    }
+  ]
+}

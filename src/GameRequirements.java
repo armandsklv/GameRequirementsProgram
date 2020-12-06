@@ -2,16 +2,16 @@ public class GameRequirements
 {
     private double VertexShader;
     private double PixelShader;
-    private String AmdCpu = "default";
-    private String IntelCpu = "default";
-    private String AMDGpu = "default";
-    private String nvidiaGpu = "default";
-    private int cpuCoreCount = 0;
-    private double cpuClockSpeed = 0;
+    private String AmdCpu;
+    private String IntelCpu;
+    private String AMDGpu;
+    private String nvidiaGpu;
+    private int cpuCoreCount;
+    private double cpuClockSpeed;
     private int ram;
     private String os;
     private double gpuVRAM;
-    private int diskSpace = 0;
+    private int diskSpace;
 
 
     public GameRequirements(double vertexShader, double pixelShader, String amdCpu, String intelCpu, String AMDGpu, String nvidiaGpu, int cpuCoreCount, double cpuClockSpeed, int ram, String os, double gpuVRAM, int diskSpace)
