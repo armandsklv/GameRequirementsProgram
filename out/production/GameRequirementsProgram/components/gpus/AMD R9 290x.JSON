@@ -1,0 +1,9 @@
+{
+  "gpuModel": "Radeon R9 290X",
+  "manufacturer": "AMD",
+  "gpuVRAMAmount": 4,
+  "gpuVRAMClockSpeed": 1250,
+  "gpuClockSpeed": 1000,
+  "gpuBoostClock": 0,
+  "benchmarkScore": 8607
+}

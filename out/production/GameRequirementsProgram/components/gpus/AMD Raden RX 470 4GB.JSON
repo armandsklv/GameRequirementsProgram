@@ -1,0 +1,9 @@
+{
+  "gpuModel": "Radeon RX 470",
+  "manufacturer": "AMD",
+  "gpuVRAMAmount": 4,
+  "gpuVRAMClockSpeed": 1650,
+  "gpuClockSpeed": 926,
+  "gpuBoostClock": 1206,
+  "benchmarkScore": 7937
+}

@@ -1,4 +1,5 @@
 import pccomponents.*;
+import pccomponents.cputypes.ConsumerCPU;
 
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ public class UserPCSystem implements IPCSystems
     public Memento createMemento()
     {
         System.out.println("System state saved.");
-        return new Memento(new UserPCSystem(name, new CPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore()),
+        return new Memento(new UserPCSystem(name, new ConsumerCPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore()),
                 new RAM(ram.getRamAmount(), ram.getRamCL(), ram.getRamClockSpeed(), ram.getRamType(), ram.getManufacturer(), ram.getModel()),
                 new OS(os.getOsName(), os.getOsBits()),
                 new GPU(gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore()),

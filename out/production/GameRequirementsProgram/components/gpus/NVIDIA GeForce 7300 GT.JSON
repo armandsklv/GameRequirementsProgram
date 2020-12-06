@@ -1,0 +1,9 @@
+{
+  "gpumodel": "GeForce 7300 GT",
+  "manufacturer": "NVIDIA",
+  "gpuVRAMAmount": 0.25,
+  "gpuVRAMClockSpeed": 500,
+  "gpuClockSpeed": 350,
+  "gpuBoostClock": 0,
+  "benchmarkScore": 108
+}

@@ -1,0 +1,10 @@
+{
+  "cpuManufacturer": "Intel",
+  "cpuModel": "Core i5-3570K",
+  "cpuCoreCount": 4,
+  "cpuClockSpeed": 3.4,
+  "cpuBoostSpeed": 3.8,
+  "logicalCoreCount": 4,
+  "isOverclockable": true,
+  "benchmarkScore": 4951
+}

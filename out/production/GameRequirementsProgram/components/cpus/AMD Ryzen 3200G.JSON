@@ -1,0 +1,10 @@
+{
+  "cpuManufacturer": "AMD",
+  "cpuModel": "Ryzen 3 3200G",
+  "cpuCoreCount": 4,
+  "cpuClockSpeed": 3.5,
+  "cpuBoostSpeed": 3.7,
+  "logicalCoreCount": 4,
+  "isOverclockable": true,
+  "benchmarkScore": 6632
+}

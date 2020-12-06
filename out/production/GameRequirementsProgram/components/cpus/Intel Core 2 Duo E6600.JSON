@@ -1,0 +1,10 @@
+{
+  "cpuManufacturer": "Intel",
+  "cpuModel": "Core 2 Duo E6600",
+  "cpuCoreCount": 2,
+  "cpuClockSpeed": 2.4,
+  "cpuBoostSpeed": 0,
+  "logicalCoreCount": 2,
+  "isOverclockable": true,
+  "benchmarkScore": 879
+}

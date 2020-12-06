@@ -1,13 +1,16 @@
+import pccomponents.*;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class User
 {
     private String username;
-    private ArrayList<IPCSystems> systems;
+    private ArrayList<UserPCSystem> systems;
     private ArrayList<Caretaker> caretakers;
     private GameRequirementsChecker gameRequirementsChecker;
     //For instantiating an existing user
-    public User(String username, ArrayList<IPCSystems> systems, ArrayList<Caretaker> caretakers)
+    public User(String username, ArrayList<UserPCSystem> systems, ArrayList<Caretaker> caretakers)
     {
         this.username = username;
         this.systems = systems;
@@ -30,12 +33,12 @@ public class User
         this.username = username;
     }
 
-    public ArrayList<IPCSystems> getSystems()
+    public ArrayList<UserPCSystem> getSystems()
     {
         return systems;
     }
 
-    public void setSystems(ArrayList<IPCSystems> systems)
+    public void setSystems(ArrayList<UserPCSystem> systems)
     {
         this.systems = systems;
     }
@@ -48,5 +51,9 @@ public class User
     public void setCaretakers(ArrayList<Caretaker> caretakers)
     {
         this.caretakers = caretakers;
+    }
+    public void createNewSystem(String name, CPU cpu, RAM ram, OS os, GPU gpu, Motherboard motherboard, Disk disk)
+    {
+        systems.add(new UserPCSystem(name, cpu, ram, os, gpu, motherboard, disk));
     }
 }
