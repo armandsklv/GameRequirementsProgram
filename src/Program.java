@@ -17,23 +17,24 @@ public class Program
     static ArrayList<Motherboard> motherboards = new ArrayList<>();
     static ArrayList<OS> os = new ArrayList<>();
     static ArrayList<RAM> ram = new ArrayList<>();
+    static ResourceLoader resourceLoader = new ResourceLoader();
     static String username;
     public static void main(String[] args)
     {
-        getUsers();
+        loadResources();
+        User currentUser = setCurrentUser();
+
+    }
+    public static User setCurrentUser()
+    {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("List of users:");
         for(User user: users)
         {
             System.out.println(user.getUsername());
         }
         System.out.println("Enter your username, if it exists previous data will be loaded, otherwise new user will be created:");
         username = scanner.next();
-        setCurrentUser();
-        User currentUser = setCurrentUser();
-
-    }
-    public static User setCurrentUser()
-    {
         for(User user : users)
         {
             if(user.getUsername().equals("username"))
@@ -43,38 +44,15 @@ public class Program
         }
         return new User(username);
     }
-    public static void getUsers()
+    public static void loadResources()
     {
-        ArrayList<String> results = new ArrayList<>();
-        try
-        {
-            File[] userFiles = new File("data/users").listFiles();
-            for (File user : userFiles)
-            {
-                if (user.isFile())
-                {
-                    results.add(user.getName());
-                }
-                System.out.println(user.getName());
-            }
-        }
-        catch (NullPointerException npe)
-        {
-            System.out.println("Couldn't read user files or no users exist.");
-        }
-
-        String json = "";
-        for(String user : results)
-        {
-            try
-            {
-                json = new String ( Files.readAllBytes( Paths.get("data/users/"+user) ) );
-            }
-            catch (IOException e)
-            {
-                System.out.println("Couldn't read user from file!");
-            }
-            users.add(new Gson().fromJson(json,User.class));
-        }
+        users = resourceLoader.getUsers();
+        cpus = resourceLoader.getCPUList();
+        disks = resourceLoader.getDiskList();
+        gpus = resourceLoader.getGPUList();
+        motherboards = resourceLoader.getMotherboardList();
+        ram = resourceLoader.getRAMList();
+        os = resourceLoader.getOSList();
+        System.out.println("Resources loaded!");
     }
 }
