@@ -1,0 +1,9 @@
+{
+  "gpuModel": "Radeon R7 250X",
+  "manufacturer": "AMD",
+  "gpuVRAMAmount": 2.0,
+  "gpuVRAMClockSpeed": 1800,
+  "gpuClockSpeed": 1000,
+  "gpuBoostClock": 0,
+  "benchmarkScore": 2269
+}

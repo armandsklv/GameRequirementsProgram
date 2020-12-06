@@ -10,9 +10,9 @@ public class EnthusiastCPU extends CPU implements ICPUGrade
 {
     private boolean overclockPotential;// yes or no
     private String cpuPower; //LOW, AVERAGE, HIGH
-    public EnthusiastCPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable)
+    public EnthusiastCPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
     {
-        super(cpuManufacturer, cpuModel, cpuCoreCount, cpuClockSpeed, cpuBoostSpeed, logicalCoreCount, isOverclockable);
+        super(cpuManufacturer, cpuModel, cpuCoreCount, cpuClockSpeed, cpuBoostSpeed, logicalCoreCount, isOverclockable, benchmarkScore);
         setOverclockPotential();
         cpuPower = "HIGH";
     }

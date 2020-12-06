@@ -1,7 +1,5 @@
 public class GameRequirements
 {
-    private double VertexShader;
-    private double PixelShader;
     private String AmdCpu;
     private String IntelCpu;
     private String AMDGpu;
@@ -14,10 +12,8 @@ public class GameRequirements
     private int diskSpace;
 
 
-    public GameRequirements(double vertexShader, double pixelShader, String amdCpu, String intelCpu, String AMDGpu, String nvidiaGpu, int cpuCoreCount, double cpuClockSpeed, int ram, String os, double gpuVRAM, int diskSpace)
+    public GameRequirements(String amdCpu, String intelCpu, String AMDGpu, String nvidiaGpu, int cpuCoreCount, double cpuClockSpeed, int ram, String os, double gpuVRAM, int diskSpace)
     {
-        VertexShader = vertexShader;
-        PixelShader = pixelShader;
         AmdCpu = amdCpu;
         IntelCpu = intelCpu;
         this.AMDGpu = AMDGpu;
@@ -28,26 +24,6 @@ public class GameRequirements
         this.os = os;
         this.gpuVRAM = gpuVRAM;
         this.diskSpace = diskSpace;
-    }
-
-    public double getVertexShader()
-    {
-        return VertexShader;
-    }
-
-    public void setVertexShader(double vertexShader)
-    {
-        VertexShader = vertexShader;
-    }
-
-    public double getPixelShader()
-    {
-        return PixelShader;
-    }
-
-    public void setPixelShader(double pixelShader)
-    {
-        PixelShader = pixelShader;
     }
 
     public String getAmdCpu()

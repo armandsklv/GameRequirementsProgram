@@ -1,0 +1,9 @@
+{
+  "gpumModel": "Radeon R9 Fury",
+  "manufacturer": "AMD",
+  "gpuVRAMAmount": 4,
+  "gpuVRAMClockSpeed":500 ,
+  "gpuClockSpeed": 1000,
+  "gpuBoostClock": 0,
+  "benchmarkScore": 9794
+}

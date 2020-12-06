@@ -2,8 +2,6 @@
   "name": "Cyberpunk 2077",
   "minimumRequirements": [
     {
-      "VertexShader": 0,
-      "PixelShader": 3.0,
       "AmdCpu": "AMD Phenom X3 8750",
       "IntelCpu": "Intel Core 2 Duo E6600",
       "AMDGpu": "",
@@ -18,8 +16,6 @@
   ],
   "recommendedRequirements": [
     {
-      "VertexShader": 5.0,
-      "PixelShader": 5.0,
       "AmdCpu": "AMD Ryzen 3 3200G",
       "IntelCpu": "",
       "AMDGpu": "",

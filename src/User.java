@@ -5,6 +5,7 @@ public class User
     private String username;
     private ArrayList<IPCSystems> systems;
     private ArrayList<Caretaker> caretakers;
+    private GameRequirementsChecker gameRequirementsChecker;
     //For instantiating an existing user
     public User(String username, ArrayList<IPCSystems> systems, ArrayList<Caretaker> caretakers)
     {

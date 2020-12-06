@@ -1,0 +1,10 @@
+{
+  "cpuManufacturer": "AMD",
+  "cpuModel": "Phenom X3 8750",
+  "cpuCoreCount": 3,
+  "cpuClockSpeed": 2.4,
+  "cpuBoostSpeed": 0,
+  "logicalCoreCount": 3,
+  "isOverclockable": true,
+  "benchmarkScore": 1337
+}

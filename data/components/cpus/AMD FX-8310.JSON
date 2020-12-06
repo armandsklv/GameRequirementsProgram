@@ -1,0 +1,10 @@
+{
+  "cpuManufacturer": "AMD",
+  "cpuModel": "FX-8310",
+  "cpuCoreCount": 4,
+  "cpuClockSpeed": 3.4,
+  "cpuBoostSpeed": 4.3,
+  "logicalCoreCount": 8,
+  "isOverclockable": true,
+  "benchmarkScore": 5215
+}

@@ -1,5 +1,7 @@
 import pccomponents.*;
 
+import java.util.ArrayList;
+
 public class UserPCSystem implements IPCSystems
 {
     String name;
@@ -9,7 +11,7 @@ public class UserPCSystem implements IPCSystems
     GPU gpu;
     Motherboard motherboard;
     Disk disk;
-
+    ArrayList<GameCheckResults> checkedGames = new ArrayList<>();
 
     public UserPCSystem(String name, CPU cpu, RAM ram, OS os, GPU gpu, Motherboard motherboard, Disk disk)
     {
