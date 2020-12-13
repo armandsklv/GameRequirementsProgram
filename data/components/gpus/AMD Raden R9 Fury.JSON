@@ -1,5 +1,6 @@
 {
-  "gpumModel": "Radeon R9 Fury",
+  "gpuType": "enthusiast",
+  "gpuModel": "Radeon R9 Fury",
   "manufacturer": "AMD",
   "gpuVRAMAmount": 4,
   "gpuVRAMClockSpeed":500 ,

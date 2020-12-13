@@ -2,6 +2,7 @@ package pccomponents;
 
 public class GPU extends PCComponent
 {
+    private String gpuType;
     private String gpuModel;
     private String manufacturer;
     private double gpuVRAMAmount;
@@ -11,8 +12,9 @@ public class GPU extends PCComponent
     private int benchmarkScore;
 
 
-    public GPU(String gpuModel, String manufacturer, double gpuVRAMAmount, double gpuVRAMClockSpeed, double gpuClockSpeed, double gpuBoostClock, int benchmarkScore)
+    public GPU(String gpuType, String gpuModel, String manufacturer, double gpuVRAMAmount, double gpuVRAMClockSpeed, double gpuClockSpeed, double gpuBoostClock, int benchmarkScore)
     {
+        this.gpuType = gpuType;
         this.gpuModel = gpuModel;
         this.manufacturer = manufacturer;
         this.gpuVRAMAmount = gpuVRAMAmount;
@@ -21,7 +23,17 @@ public class GPU extends PCComponent
         this.gpuBoostClock = gpuBoostClock;
         this.benchmarkScore = benchmarkScore;
     }
-
+    public GPU(GPU gpu)
+    {
+        this.gpuType = gpu.getGpuType();
+        this.gpuModel = gpu.getGpuModel();
+        this.manufacturer = gpu.getManufacturer();
+        this.gpuVRAMAmount = gpu.getGpuVRAMAmount();
+        this.gpuVRAMClockSpeed = gpu.getGpuVRAMClockSpeed();
+        this.gpuClockSpeed = gpu.getGpuClockSpeed();
+        this.gpuBoostClock = gpu.getGpuBoostClock();
+        this.benchmarkScore = gpu.getBenchmarkScore();
+    }
     @Override
     public void printComponentInfo()
     {
@@ -96,5 +108,15 @@ public class GPU extends PCComponent
     public void setBenchmarkScore(int benchmarkScore)
     {
         this.benchmarkScore = benchmarkScore;
+    }
+
+    public String getGpuType()
+    {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType)
+    {
+        this.gpuType = gpuType;
     }
 }

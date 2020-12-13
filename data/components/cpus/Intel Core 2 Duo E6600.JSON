@@ -1,4 +1,5 @@
 {
+  "cpuType": "consumer",
   "cpuManufacturer": "Intel",
   "cpuModel": "Core 2 Duo E6600",
   "cpuCoreCount": 2,

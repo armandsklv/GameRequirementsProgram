@@ -1,4 +1,5 @@
 {
+  "gpuType": "consumer",
   "gpuModel": "GeForce GTX 970",
   "manufacturer": "NVIDIA",
   "gpuVRAMAmount": 4,

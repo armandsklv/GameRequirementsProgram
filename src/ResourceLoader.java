@@ -1,5 +1,13 @@
 import com.google.gson.Gson;
 import pccomponents.*;
+import pccomponents.cputypes.BudgetCPU;
+import pccomponents.cputypes.ConsumerCPU;
+import pccomponents.cputypes.EnthusiastCPU;
+import pccomponents.cputypes.ServerCPU;
+import pccomponents.gputypes.BudgetGPU;
+import pccomponents.gputypes.ConsumerGPU;
+import pccomponents.gputypes.EnthusiastGPU;
+import pccomponents.gputypes.WorkstationGPU;
 
 import java.io.File;
 import java.io.IOException;
@@ -75,7 +83,27 @@ public class ResourceLoader
             {
                 System.out.println("Couldn't read cpu from file!");
             }
-            tmpCPUs.add(new Gson().fromJson(json,CPU.class));
+            CPU tmpCPU = new Gson().fromJson(json,CPU.class);
+            if(tmpCPU.getCpuType().equals("enthusiast"))
+            {
+                tmpCPUs.add(new Gson().fromJson(json, EnthusiastCPU.class));
+            }
+            else if(tmpCPU.getCpuType().equals("consumer"))
+            {
+                tmpCPUs.add(new Gson().fromJson(json, ConsumerCPU.class));
+            }
+            else if(tmpCPU.getCpuType().equals("budget"))
+            {
+                tmpCPUs.add(new Gson().fromJson(json, BudgetCPU.class));
+            }
+            else if(tmpCPU.getCpuType().equals("server"))
+            {
+                tmpCPUs.add(new Gson().fromJson(json, ServerCPU.class));
+            }
+            else
+            {
+                tmpCPUs.add(tmpCPU);
+            }
         }
         return tmpCPUs;
     }
@@ -145,7 +173,27 @@ public class ResourceLoader
             {
                 System.out.println("Couldn't read gpu from file!");
             }
-            tmpGPUs.add(new Gson().fromJson(json, GPU.class));
+            GPU tmpGPU = new Gson().fromJson(json,GPU.class);
+            if(tmpGPU.getGpuType().equals("enthusiast"))
+            {
+                tmpGPUs.add(new Gson().fromJson(json, EnthusiastGPU.class));
+            }
+            else if(tmpGPU.getGpuType().equals("consumer"))
+            {
+                tmpGPUs.add(new Gson().fromJson(json, ConsumerGPU.class));
+            }
+            else if(tmpGPU.getGpuType().equals("budget"))
+            {
+                tmpGPUs.add(new Gson().fromJson(json, BudgetGPU.class));
+            }
+            else if(tmpGPU.getGpuType().equals("workstation"))
+            {
+                tmpGPUs.add(new Gson().fromJson(json, WorkstationGPU.class));
+            }
+            else
+            {
+                tmpGPUs.add(tmpGPU);
+            }
         }
         return tmpGPUs;
     }

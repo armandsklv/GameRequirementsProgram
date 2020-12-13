@@ -9,9 +9,15 @@ public class BudgetCPU extends CPU implements ICPUGrade
 {
     private boolean overclockPotential;// yes or no
     private String cpuPower; //LOW, AVERAGE, HIGH
-    public BudgetCPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
+    public BudgetCPU(String cpuType, String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
     {
-        super(cpuManufacturer, cpuModel, cpuCoreCount, cpuClockSpeed, cpuBoostSpeed, logicalCoreCount, isOverclockable, benchmarkScore);
+        super(cpuType, cpuManufacturer, cpuModel, cpuCoreCount, cpuClockSpeed, cpuBoostSpeed, logicalCoreCount, isOverclockable, benchmarkScore);
+        setOverclockPotential();
+        cpuPower = "LOW";
+    }
+    public BudgetCPU(CPU cpu)
+    {
+        super(cpu);
         setOverclockPotential();
         cpuPower = "LOW";
     }

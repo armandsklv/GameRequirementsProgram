@@ -1,4 +1,5 @@
 {
+  "gpuType": "consumer",
   "gpuModel": "Radeon R7 250X",
   "manufacturer": "AMD",
   "gpuVRAMAmount": 2.0,

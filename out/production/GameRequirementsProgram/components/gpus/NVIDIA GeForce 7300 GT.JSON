@@ -1,5 +1,6 @@
 {
-  "gpumodel": "GeForce 7300 GT",
+  "gpuType": "budget",
+  "gpuModel": "GeForce 7300 GT",
   "manufacturer": "NVIDIA",
   "gpuVRAMAmount": 0.25,
   "gpuVRAMClockSpeed": 500,

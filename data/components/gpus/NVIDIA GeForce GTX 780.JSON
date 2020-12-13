@@ -1,4 +1,5 @@
 {
+  "gpuType": "enthusiast",
   "gpuModel": "GeForce GTX 780",
   "manufacturer": "NVIDIA",
   "gpuVRAMAmount": 3,

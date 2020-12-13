@@ -1,4 +1,5 @@
 {
+  "cpuType": "consumer",
   "cpuManufacturer": "Intel",
   "cpuModel": "Core i3-4170",
   "cpuCoreCount": 2,

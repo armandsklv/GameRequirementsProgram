@@ -1,4 +1,5 @@
 {
+  "gpuType": "budget",
   "gpuModel": "GeForce GTX 1050",
   "manufacturer": "NVIDIA",
   "gpuVRAMAmount": 2,

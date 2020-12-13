@@ -2,6 +2,7 @@ package pccomponents;
 
 public class CPU extends PCComponent
 {
+    private String cpuType;
     private String cpuManufacturer;
     private String cpuModel;
     private int cpuCoreCount;
@@ -11,8 +12,9 @@ public class CPU extends PCComponent
     private boolean isOverclockable;
     private int benchmarkScore;
 
-    public CPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
+    public CPU(String cpuType, String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
     {
+        this.cpuType = cpuType;
         this.cpuManufacturer = cpuManufacturer;
         this.cpuModel = cpuModel;
         this.cpuCoreCount = cpuCoreCount;
@@ -21,6 +23,18 @@ public class CPU extends PCComponent
         this.logicalCoreCount = logicalCoreCount;
         this.isOverclockable = isOverclockable;
         this.benchmarkScore = benchmarkScore;
+    }
+    public CPU(CPU cpu)
+    {
+        this.cpuType = cpu.getCpuType();
+        this.cpuManufacturer = cpu.getCpuManufacturer();
+        this.cpuModel = cpu.getCpuModel();
+        this.cpuCoreCount = cpu.getCpuCoreCount();
+        this.cpuClockSpeed = cpu.getCpuClockSpeed();
+        this.cpuBoostSpeed = cpu.getCpuBoostSpeed();
+        this.logicalCoreCount = cpu.getLogicalCoreCount();
+        this.isOverclockable = cpu.isOverclockable;
+        this.benchmarkScore = cpu.benchmarkScore;
     }
     @Override
     public void printComponentInfo()
@@ -106,5 +120,15 @@ public class CPU extends PCComponent
     public void setBenchmarkScore(int benchmarkScore)
     {
         this.benchmarkScore = benchmarkScore;
+    }
+
+    public String getCpuType()
+    {
+        return cpuType;
+    }
+
+    public void setCpuType(String cpuType)
+    {
+        this.cpuType = cpuType;
     }
 }

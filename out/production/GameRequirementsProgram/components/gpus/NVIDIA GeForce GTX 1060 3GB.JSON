@@ -1,5 +1,6 @@
 {
-  "gpumodel": "GeForce GTX 1060",
+  "gpuType": "consumer",
+  "gpuModel": "GeForce GTX 1060",
   "manufacturer": "NVIDIA",
   "gpuVRAMAmount": 3,
   "gpuVRAMClockSpeed": 2002,

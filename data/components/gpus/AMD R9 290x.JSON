@@ -1,4 +1,5 @@
 {
+  "gpuType": "enthusiast",
   "gpuModel": "Radeon R9 290X",
   "manufacturer": "AMD",
   "gpuVRAMAmount": 4,

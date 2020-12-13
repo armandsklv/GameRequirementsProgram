@@ -1,4 +1,5 @@
 {
+  "cpuType": "consumer",
   "cpuManufacturer": "AMD",
   "cpuModel": "Phenom X3 8750",
   "cpuCoreCount": 3,

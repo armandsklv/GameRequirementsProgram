@@ -1,4 +1,5 @@
 {
+  "cpuType": "consumer",
   "cpuManufacturer": "Intel",
   "cpuModel": "Core i5-3570K",
   "cpuCoreCount": 4,

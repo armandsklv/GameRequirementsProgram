@@ -10,9 +10,15 @@ public class ConsumerCPU extends CPU implements ICPUGrade
 {
     private boolean overclockPotential;// yes or no
     private String cpuPower; //LOW, AVERAGE, HIGH
-    public ConsumerCPU(String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
+    public ConsumerCPU(String cpuType, String cpuManufacturer, String cpuModel, int cpuCoreCount, double cpuClockSpeed, double cpuBoostSpeed, int logicalCoreCount, boolean isOverclockable, int benchmarkScore)
     {
-        super(cpuManufacturer, cpuModel, cpuCoreCount, cpuClockSpeed, cpuBoostSpeed, logicalCoreCount, isOverclockable, benchmarkScore);
+        super(cpuType, cpuManufacturer, cpuModel, cpuCoreCount, cpuClockSpeed, cpuBoostSpeed, logicalCoreCount, isOverclockable, benchmarkScore);
+        setOverclockPotential();
+        cpuPower = "AVERAGE";
+    }
+    public ConsumerCPU(CPU cpu)
+    {
+        super(cpu);
         setOverclockPotential();
         cpuPower = "AVERAGE";
     }

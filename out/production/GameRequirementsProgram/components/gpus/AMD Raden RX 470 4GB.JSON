@@ -1,4 +1,5 @@
 {
+  "gpuType": "consumer",
   "gpuModel": "Radeon RX 470",
   "manufacturer": "AMD",
   "gpuVRAMAmount": 4,

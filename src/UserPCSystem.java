@@ -1,5 +1,13 @@
+import com.google.gson.Gson;
 import pccomponents.*;
+import pccomponents.cputypes.BudgetCPU;
 import pccomponents.cputypes.ConsumerCPU;
+import pccomponents.cputypes.EnthusiastCPU;
+import pccomponents.cputypes.ServerCPU;
+import pccomponents.gputypes.BudgetGPU;
+import pccomponents.gputypes.ConsumerGPU;
+import pccomponents.gputypes.EnthusiastGPU;
+import pccomponents.gputypes.WorkstationGPU;
 
 import java.util.ArrayList;
 
@@ -28,7 +36,6 @@ public class UserPCSystem implements IPCSystems
     {
 
     }
-
     @Override
     public void printSystem()
     {
@@ -43,12 +50,57 @@ public class UserPCSystem implements IPCSystems
     public Memento createMemento()
     {
         System.out.println("System state saved.");
-        return new Memento(new UserPCSystem(name, new ConsumerCPU(cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore()),
+        GPU tmpGPU;
+        CPU tmpCPU;
+        if(gpu.getGpuType().equals("enthusiast"))
+        {
+            tmpGPU = new EnthusiastGPU(gpu.getGpuType(),gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore());
+        }
+        else if(gpu.getGpuType().equals("consumer"))
+        {
+            tmpGPU = new ConsumerGPU(gpu.getGpuType(),gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore());
+        }
+        else if(gpu.getGpuType().equals("budget"))
+        {
+            tmpGPU = new BudgetGPU(gpu.getGpuType(),gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore());
+        }
+        else if(gpu.getGpuType().equals("workstation"))
+        {
+            tmpGPU = new WorkstationGPU(gpu.getGpuType(),gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore());
+        }
+        else
+        {
+            tmpGPU = new GPU(gpu.getGpuType(),gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore());
+        }
+        if(cpu.getCpuType().equals("enthusiast"))
+        {
+            tmpCPU = new EnthusiastCPU(cpu.getCpuType(), cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore());
+        }
+        else if(cpu.getCpuType().equals("consumer"))
+        {
+            tmpCPU = new ConsumerCPU(cpu.getCpuType(), cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore());
+        }
+        else if(cpu.getCpuType().equals("budget"))
+        {
+            tmpCPU = new BudgetCPU(cpu.getCpuType(), cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore());
+        }
+        else if(cpu.getCpuType().equals("server"))
+        {
+            tmpCPU = new ServerCPU(cpu.getCpuType(), cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore());
+        }
+        else
+        {
+            tmpCPU = new CPU(cpu.getCpuType(), cpu.getCpuManufacturer(), cpu.getCpuModel(), cpu.getCpuCoreCount(), cpu.getCpuClockSpeed(), cpu.getCpuBoostSpeed(), cpu.getLogicalCoreCount(), cpu.isOverclockable(), cpu.getBenchmarkScore());
+        }
+
+
+        return new Memento(new UserPCSystem(name, tmpCPU,
                 new RAM(ram.getRamAmount(), ram.getRamCL(), ram.getRamClockSpeed(), ram.getRamType(), ram.getManufacturer(), ram.getModel()),
                 new OS(os.getOsName(), os.getOsBits()),
-                new GPU(gpu.getGpuModel(), gpu.getManufacturer(), gpu.getGpuVRAMAmount(), gpu.getGpuVRAMClockSpeed(), gpu.getGpuClockSpeed(), gpu.getGpuBoostClock(), gpu.getBenchmarkScore()),
+                tmpGPU,
                 new Motherboard(motherboard.getChipsetType(), motherboard.getCpuManufacturer(), motherboard.getModel(), motherboard.getManufacturer(), motherboard.getSocketType()),
                 new Disk(disk.getDiskModel(), disk.getDiskManufacturer(), disk.getDiskType(), disk.getDiskSpace())));
+
     }
     public void restoreFromMemento(Memento memento)
     {

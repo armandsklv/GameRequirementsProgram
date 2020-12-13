@@ -116,16 +116,20 @@ public class Program
                 System.out.println("Entered symbol is not a number! Please try again:");
                 scanner.next();
             }
-
-
         }
-
         saveResources(currentUser);
     }
     public static void systemsMenu()
     {
         int command = -1;
+        int num = 1;
         Scanner scanner = new Scanner(System.in);
+        for(UserPCSystem system : currentUser.getSystems())
+        {
+            System.out.println("System No."+num);
+            system.printSystem();
+            num+=1;
+        }
         System.out.println("-----User systems menu-----");
         System.out.println("Please input the number of the command to do: ");
         System.out.println("(System No.)Select a system.");
@@ -142,7 +146,7 @@ public class Program
                 }
                 else
                 {
-                    workOnSystem(command);
+                    workOnSystem(command-1);
                 }
                 break;
             }
@@ -151,8 +155,6 @@ public class Program
                 System.out.println("Entered symbol is not a number! Please try again:");
                 scanner.next();
             }
-
-
         }
     }
     public static void workOnSystem(int systemNum)
@@ -216,7 +218,6 @@ public class Program
                 System.out.println("Entered symbol is not a number! Please try again:");
                 scanner.next();
             }
-
         }
     }
     public static void createNewSystem(int command)
@@ -237,13 +238,14 @@ public class Program
         currentUser.getSystems().add(tempPC);
         currentUser.getCaretakers().add(new Caretaker());
     }
+
     public static void checkRequirements()
     {
-
+        //TODO
     }
     public static void getGameCheckResults()
     {
-
+        //TODO
     }
     public static void changeCPU(UserPCSystem pc)
     {
@@ -562,5 +564,13 @@ public class Program
     public static void setCurrentUser(User currentUser)
     {
         Program.currentUser = currentUser;
+    }
+    public static void getCPUGrade(CPU cpu)
+    {
+
+    }
+    public static void getGPUGrade(GPU gpu)
+    {
+
     }
 }
