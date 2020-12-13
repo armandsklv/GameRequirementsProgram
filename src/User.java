@@ -1,7 +1,6 @@
 import pccomponents.*;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class User
 {
@@ -19,6 +18,7 @@ public class User
     //For new user
     public User(String username)
     {
+        this.username=username;
         systems = new ArrayList<>();
         caretakers = new ArrayList<>();
     }
@@ -28,7 +28,7 @@ public class User
         return username;
     }
 
-    public void setUsername(String username)
+    public void setusername(String username)
     {
         this.username = username;
     }
