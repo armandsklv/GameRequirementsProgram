@@ -39,4 +39,8 @@ public class GameCheckResults
     {
         return recommendedRequirementsPass;
     }
+    public void printResult()
+    {
+        System.out.println("Game: "+getCheckedGameName()+", MIN upgrade path: "+getMinUpgradePath()+", RECOMMENDED upgrade path: "+getRecommendedUpgradePath());
+    }
 }

@@ -100,7 +100,6 @@ public class UserPCSystem implements IPCSystems
                 tmpGPU,
                 new Motherboard(motherboard.getChipsetType(), motherboard.getCpuManufacturer(), motherboard.getModel(), motherboard.getManufacturer(), motherboard.getSocketType()),
                 new Disk(disk.getDiskModel(), disk.getDiskManufacturer(), disk.getDiskType(), disk.getDiskSpace())));
-
     }
     public void restoreFromMemento(Memento memento)
     {
@@ -189,5 +188,15 @@ public class UserPCSystem implements IPCSystems
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public ArrayList<GameCheckResults> getCheckedGames()
+    {
+        return checkedGames;
+    }
+
+    public void setCheckedGames(ArrayList<GameCheckResults> checkedGames)
+    {
+        this.checkedGames = checkedGames;
     }
 }

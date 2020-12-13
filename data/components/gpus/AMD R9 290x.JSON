@@ -1,6 +1,6 @@
 {
   "gpuType": "enthusiast",
-  "gpuModel": "Radeon R9 290X",
+  "gpuModel": "R9 290X",
   "manufacturer": "AMD",
   "gpuVRAMAmount": 4,
   "gpuVRAMClockSpeed": 1250,

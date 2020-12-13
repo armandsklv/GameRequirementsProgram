@@ -1,10 +1,10 @@
 {
-  "name": "Cyberpunk 2077",
-  "minimumRequirements": [
+  "name": "Counter-strike Global Offensive",
+  "minimumRequirements":
     {
       "AmdCpu": "AMD Phenom X3 8750",
       "IntelCpu": "Intel Core 2 Duo E6600",
-      "AMDGpu": "",
+      "AMDGpu": "AMD R7 250x",
       "nvidiaGpu": "NVIDIA GeForce 7300 GT",
       "cpuCoreCount": 0,
       "cpuClockSpeed": 0,
@@ -13,12 +13,12 @@
       "gpuVRAM": 0.25,
       "diskSpace": 15
     }
-  ],
-  "recommendedRequirements": [
+  ,
+  "recommendedRequirements":
     {
       "AmdCpu": "AMD Ryzen 3 3200G",
-      "IntelCpu": "",
-      "AMDGpu": "",
+      "IntelCpu": "Intel Core i5-3570K",
+      "AMDGpu": "AMD R9 290x",
       "nvidiaGpu": "NVIDIA GeForce GTX 1050",
       "cpuCoreCount": 0,
       "cpuClockSpeed": 0,
@@ -27,5 +27,5 @@
       "gpuVRAM": 2.0,
       "diskSpace": 15
     }
-  ]
+
 }

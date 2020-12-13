@@ -1,6 +1,7 @@
 import com.google.gson.Gson;
 import pccomponents.CPU;
 import pccomponents.GPU;
+import pccomponents.cputypes.ConsumerCPU;
 import systemupgrade.*;
 
 import java.io.File;
@@ -14,8 +15,8 @@ public class GameRequirementsChecker
     private GameRequirements gameMinimumRequirements;
     private GameRequirements gameRecommendedRequirements;
     private UserPCSystem userPCSystem;
-    private String minUpgradePath;
-    private String recommendedUpgradePath;
+    private String minUpgradePath = "";
+    private String recommendedUpgradePath = "";
 
     public GameRequirementsChecker(Game game, UserPCSystem userPCSystem)
     {
@@ -116,12 +117,13 @@ public class GameRequirementsChecker
         }
         if (getCpuBenchmarkScore(cpuName) > userPCSystem.getCpu().getBenchmarkScore())
         {
+            System.out.println(getCpuBenchmarkScore(cpuName)+" and "+ userPCSystem.getCpu().getBenchmarkScore());
             if ((float) getCpuBenchmarkScore(cpuName) / userPCSystem.getCpu().getBenchmarkScore() < 1.075)
             {
-                minUpgradePath = minUpgradePath.concat(new Context(new OverclockCPU()).executeStrategy());
+                recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new OverclockCPU()).executeStrategy());
             } else
             {
-                minUpgradePath = minUpgradePath.concat(new Context(new UpgradeCPU()).executeStrategy());
+                recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeCPU()).executeStrategy());
             }
         }
         String gpuName;
@@ -132,10 +134,10 @@ public class GameRequirementsChecker
             {
                 if ((float) getGpuBenchmarkScore(gpuName) / userPCSystem.getGpu().getBenchmarkScore() < 1.075)
                 {
-                    minUpgradePath = minUpgradePath.concat(new Context(new OverclockGPU()).executeStrategy());
+                    recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new OverclockGPU()).executeStrategy());
                 } else
                 {
-                    minUpgradePath = minUpgradePath.concat(new Context(new UpgradeGPU()).executeStrategy());
+                    recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeGPU()).executeStrategy());
                 }
             }
         } else
@@ -145,27 +147,27 @@ public class GameRequirementsChecker
             {
                 if ((float) getGpuBenchmarkScore(gpuName) / userPCSystem.getGpu().getBenchmarkScore() < 1.075)
                 {
-                    minUpgradePath = minUpgradePath.concat(new Context(new OverclockGPU()).executeStrategy());
+                    recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new OverclockGPU()).executeStrategy());
                 } else
                 {
-                    minUpgradePath = minUpgradePath.concat(new Context(new UpgradeGPU()).executeStrategy());
+                    recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeGPU()).executeStrategy());
                 }
             } else if (gameRecommendedRequirements.getGpuVRAM() > userPCSystem.getGpu().getGpuVRAMAmount())
             {
-                minUpgradePath = minUpgradePath.concat(new Context(new UpgradeGPU()).executeStrategy());
+                recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeGPU()).executeStrategy());
             }
         }
         if (gameRecommendedRequirements.getRam() > userPCSystem.getRam().getRamAmount())
         {
-            minUpgradePath = minUpgradePath.concat(new Context(new UpgradeRAM()).executeStrategy());
+            recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeRAM()).executeStrategy());
         }
         if (gameRecommendedRequirements.getDiskSpace() > userPCSystem.getDisk().getDiskSpace())
         {
-            minUpgradePath = minUpgradePath.concat(new Context(new UpgradeDisk()).executeStrategy());
+            recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeDisk()).executeStrategy());
         }
         if (!gameRecommendedRequirements.getOs().equals(userPCSystem.getOs().getOsName()))
         {
-            minUpgradePath = minUpgradePath.concat(new Context(new UpgradeOS()).executeStrategy());
+            recommendedUpgradePath = recommendedUpgradePath.concat(new Context(new UpgradeOS()).executeStrategy());
         }
     }
     private int getCpuBenchmarkScore(String cpuName)
@@ -179,7 +181,7 @@ public class GameRequirementsChecker
         {
             System.out.println("Couldn't read cpu benchmark score from file!");
         }
-        CPU cpu = new Gson().fromJson(json,CPU.class);
+        CPU cpu = new Gson().fromJson(json, CPU.class);
         return cpu.getBenchmarkScore();
     }
     private int getGpuBenchmarkScore(String gpuName)
@@ -191,7 +193,7 @@ public class GameRequirementsChecker
         }
         catch (IOException e)
         {
-            System.out.println("Couldn't read cpu benchmark score from file!");
+            System.out.println("Couldn't read gpu benchmark score from file!");
         }
         GPU gpu = new Gson().fromJson(json,GPU.class);
         return gpu.getBenchmarkScore();

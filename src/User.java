@@ -56,4 +56,19 @@ public class User
     {
         systems.add(new UserPCSystem(name, cpu, ram, os, gpu, motherboard, disk));
     }
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public GameRequirementsChecker getGameRequirementsChecker()
+    {
+        return gameRequirementsChecker;
+    }
+
+    public void setGameRequirementsChecker(GameRequirementsChecker gameRequirementsChecker)
+    {
+        this.gameRequirementsChecker = gameRequirementsChecker;
+    }
 }

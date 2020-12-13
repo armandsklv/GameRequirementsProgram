@@ -1,8 +1,8 @@
 {
   "name": "Forza Horizon 4",
-  "minimumRequirements": [
+  "minimumRequirements":
     {
-      "AmdCpu": "",
+      "AmdCpu": "AMD FX-8310",
       "IntelCpu": "Intel Core i3-4170",
       "AMDGpu": "AMD R7 250x",
       "nvidiaGpu": "NVIDIA GeForce 650 Ti",
@@ -13,10 +13,10 @@
       "gpuVRAM": 2.0,
       "diskSpace": 65
     }
-  ],
-  "recommendedRequirements": [
+  ,
+  "recommendedRequirements":
     {
-      "AmdCpu": "",
+      "AmdCpu": "AMD Ryzen 3 3200G",
       "IntelCpu": "Intel Core i7-3820",
       "AMDGpu": "AMD R9 290x",
       "nvidiaGpu": "NVIDIA GeForce GTX 970",
@@ -27,5 +27,5 @@
       "gpuVRAM": 4.0,
       "diskSpace": 65
     }
-  ]
+
 }

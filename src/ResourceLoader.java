@@ -302,4 +302,38 @@ public class ResourceLoader
         }
         return tmpOSList;
     }
+    public ArrayList<Game> getGamesList()
+    {
+        ArrayList<Game> tmpGames = new ArrayList<>();
+        ArrayList<String> results = new ArrayList<>();
+        try
+        {
+            File[] gameFiles = new File("data/games/").listFiles();
+            for (File game : gameFiles)
+            {
+                if (game.isFile())
+                {
+                    results.add(game.getName());
+                }
+            }
+        }
+        catch (NullPointerException npe)
+        {
+            System.out.println("Couldn't read disk files or no disks exist.");
+        }
+        String json = "";
+        for(String game : results)
+        {
+            try
+            {
+                json = new String ( Files.readAllBytes( Paths.get("data/games/"+game) ) );
+            }
+            catch (IOException e)
+            {
+                System.out.println("Couldn't read disk from file!");
+            }
+            tmpGames.add(new Gson().fromJson(json,Game.class));
+        }
+        return tmpGames;
+    }
 }

@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class Program
 {
+    static ArrayList<Game> games = new ArrayList<>();
     static ArrayList<User> users = new ArrayList<>();
     static ArrayList<CPU> cpus = new ArrayList<>();
     static ArrayList<Disk> disks = new ArrayList<>();
@@ -55,6 +56,7 @@ public class Program
         motherboards = resourceLoader.getMotherboardList();
         ram = resourceLoader.getRAMList();
         os = resourceLoader.getOSList();
+        games = resourceLoader.getGamesList();
         System.out.println("Resources loaded!");
     }
     public static void saveResources(User user)
@@ -94,6 +96,10 @@ public class Program
                         if(currentUser.getSystems().isEmpty())
                         {
                             System.out.println("You currently do not have any systems to work with!");
+                            System.out.println("Please input the number of the command to do: ");
+                            System.out.println("(1) Show all systems.");
+                            System.out.println("(2) Create a new system.");
+                            System.out.println("(0) Log out");
                         }
                         else
                         {
@@ -101,7 +107,7 @@ public class Program
                         }
                         break;
                     case 2:
-                        createNewSystem(command);
+                        createNewSystem();
                         break;
                     case 0:
                         System.out.println("Logging out!");
@@ -143,6 +149,10 @@ public class Program
                 if (command == 0)
                 {
                     System.out.println("Going back.");
+                    System.out.println("Please input the number of the command to do: ");
+                    System.out.println("(1) Show all systems.");
+                    System.out.println("(2) Create a new system.");
+                    System.out.println("(0) Log out");
                 }
                 else
                 {
@@ -182,31 +192,114 @@ public class Program
                 {
 
                     case 1:
-                        checkRequirements();
+                        checkRequirements(systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 2:
-                        getGameCheckResults();
+                        getGameCheckResults(systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 3:
-                        changeCPU(tempPC);
+                        changeCPU(tempPC, systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 4:
-                        changeGPU(tempPC);
+                        changeGPU(tempPC, systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 5:
-                        changeRAM(tempPC);
+                        changeRAM(tempPC, systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 6:
-                        changeDisk(tempPC);
+                        changeDisk(tempPC, systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 7:
-                        changeMotherboard(tempPC);
+                        changeMotherboard(tempPC, systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 8:
-                        changeOS(tempPC);
+                        changeOS(tempPC, systemNum);
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(1)Check requirements.");
+                        System.out.println("(2)Show game check results.");
+                        System.out.println("(3)Change CPU.");
+                        System.out.println("(4)Change GPU.");
+                        System.out.println("(5)Change RAM.");
+                        System.out.println("(6)Change Disk.");
+                        System.out.println("(7)Change motherboard.");
+                        System.out.println("(8)Change OS.");
+                        System.out.println("(0) Go back");
                         break;
                     case 0:
                         System.out.println("Going back.");
+                        System.out.println("Please input the number of the command to do: ");
+                        System.out.println("(System No.)Select a system.");
+                        System.out.println("(0) Go back");
                         break;
                     default:
                         workOnSystem(command);
@@ -220,7 +313,7 @@ public class Program
             }
         }
     }
-    public static void createNewSystem(int command)
+    public static void createNewSystem()
     {
         System.out.println("-----Creating new user system-----");
         System.out.println("You will be asked to enter the name of your new system,\n after that you will be asked to select each component of your new system, one by one.");
@@ -229,25 +322,81 @@ public class Program
         String pcName = scanner.next();
         UserPCSystem tempPC = new UserPCSystem();
         tempPC.setName(pcName);
-        changeCPU(tempPC);
-        changeGPU(tempPC);
-        changeRAM(tempPC);
-        changeDisk(tempPC);
-        changeMotherboard(tempPC);
-        changeOS(tempPC);
+        addCPU(tempPC);
+        addGPU(tempPC);
+        addRAM(tempPC);
+        addDisk(tempPC);
+        addMotherboard(tempPC);
+        addOS(tempPC);
         currentUser.getSystems().add(tempPC);
         currentUser.getCaretakers().add(new Caretaker());
+        System.out.println("Please input the number of the command to do: ");
+        System.out.println("(1) Show all systems.");
+        System.out.println("(2) Create a new system.");
+        System.out.println("(0) Log out");
     }
 
-    public static void checkRequirements()
+    public static ArrayList<Game> getGames()
     {
-        //TODO
+        return games;
     }
-    public static void getGameCheckResults()
+
+    public static void setGames(ArrayList<Game> games)
     {
-        //TODO
+        Program.games = games;
     }
-    public static void changeCPU(UserPCSystem pc)
+
+    public static void checkRequirements(int systemNum)
+    {
+        GameRequirementsChecker gameRequirementsChecker;
+        int num = 1;
+        System.out.println("Game list:");
+        for(Game game: getGames())
+        {
+            System.out.println(num+".");
+            System.out.println(game.getName());
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the game you would like to check the requirements for: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    gameRequirementsChecker = new GameRequirementsChecker(getGames().get(command-1), currentUser.getSystems().get(systemNum));
+                    currentUser.getSystems().get(systemNum).getCheckedGames().add(gameRequirementsChecker.getRequirementsComparisonResults());
+                    currentUser.getSystems().get(systemNum).getCheckedGames().get(currentUser.getSystems().get(systemNum).getCheckedGames().size()-1).printResult();
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
+
+
+    }
+    public static void getGameCheckResults(int systemNum)
+    {
+        System.out.println("-----Checked game results-----");
+        for(GameCheckResults gcr : currentUser.getSystems().get(systemNum).getCheckedGames())
+        {
+            gcr.printResult();
+        }
+    }
+    public static void changeCPU(UserPCSystem pc, int systemNum)
     {
         int num = 1;
         System.out.println("CPU list:");
@@ -273,7 +422,7 @@ public class Program
                 }
                 else if(command >= 1 && command < num)
                 {
-                    pc.createMemento();
+                    currentUser.getCaretakers().get(systemNum).add(pc.createMemento());
                     pc.setCpu(getCpus().get(command-1));
                     break;
                 }
@@ -285,7 +434,7 @@ public class Program
             }
         }
     }
-    public static void changeGPU(UserPCSystem pc)
+    public static void changeGPU(UserPCSystem pc, int systemNum)
     {
         int num = 1;
         System.out.println("GPU list:");
@@ -311,7 +460,7 @@ public class Program
                 }
                 else if(command >= 1 && command < num)
                 {
-                    pc.createMemento();
+                    currentUser.getCaretakers().get(systemNum).add(pc.createMemento());
                     pc.setGpu(getGpus().get(command-1));
                     break;
                 }
@@ -323,7 +472,7 @@ public class Program
             }
         }
     }
-    public static void changeRAM(UserPCSystem pc)
+    public static void changeRAM(UserPCSystem pc, int systemNum)
     {
         int num = 1;
         System.out.println("RAM list:");
@@ -349,7 +498,7 @@ public class Program
                 }
                 else if(command >= 1 && command < num)
                 {
-                    pc.createMemento();
+                    currentUser.getCaretakers().get(systemNum).add(pc.createMemento());
                     pc.setRam(getRam().get(command-1));
                     break;
                 }
@@ -361,7 +510,7 @@ public class Program
             }
         }
     }
-    public static void changeDisk(UserPCSystem pc)
+    public static void changeDisk(UserPCSystem pc, int systemNum)
     {
         int num = 1;
         System.out.println("Disk list:");
@@ -387,7 +536,7 @@ public class Program
                 }
                 else if(command >= 1 && command < num)
                 {
-                    pc.createMemento();
+                    currentUser.getCaretakers().get(systemNum).add(pc.createMemento());
                     pc.setDisk(getDisks().get(command-1));
                     break;
                 }
@@ -399,7 +548,7 @@ public class Program
             }
         }
     }
-    public static void changeMotherboard(UserPCSystem pc)
+    public static void changeMotherboard(UserPCSystem pc, int systemNum)
     {
         int num = 1;
         System.out.println("Motherboard list:");
@@ -425,7 +574,7 @@ public class Program
                 }
                 else if(command >= 1 && command < num)
                 {
-                    pc.createMemento();
+                    currentUser.getCaretakers().get(systemNum).add(pc.createMemento());
                     pc.setMotherboard(getMotherboards().get(command-1));
                     break;
                 }
@@ -437,7 +586,7 @@ public class Program
             }
         }
     }
-    public static void changeOS(UserPCSystem pc)
+    public static void changeOS(UserPCSystem pc, int systemNum)
     {
         int num = 1;
         System.out.println("OS list:");
@@ -463,7 +612,7 @@ public class Program
                 }
                 else if(command >= 1 && command < num)
                 {
-                    pc.createMemento();
+                    currentUser.getCaretakers().get(systemNum).add(pc.createMemento());
                     pc.setOs(getOs().get(command-1));
                     break;
                 }
@@ -572,5 +721,227 @@ public class Program
     public static void getGPUGrade(GPU gpu)
     {
 
+    }
+    public static void addCPU(UserPCSystem pc)
+    {
+        int num = 1;
+        System.out.println("CPU list:");
+        for(CPU cpu: getCpus())
+        {
+            System.out.println(num+".");
+            cpu.printComponentInfo();
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the cpu you would like to put in your system: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    pc.setCpu(getCpus().get(command-1));
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
+    }
+    public static void addGPU(UserPCSystem pc)
+    {
+        int num = 1;
+        System.out.println("GPU list:");
+        for(GPU gpu: getGpus())
+        {
+            System.out.println(num+".");
+            gpu.printComponentInfo();
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the gpu you would like to put in your system: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    pc.setGpu(getGpus().get(command-1));
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
+    }
+    public static void addRAM(UserPCSystem pc )
+    {
+        int num = 1;
+        System.out.println("RAM list:");
+        for(RAM ram: getRam())
+        {
+            System.out.println(num+".");
+            ram.printComponentInfo();
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the ram you would like to put in your system: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    pc.setRam(getRam().get(command-1));
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
+    }
+    public static void addDisk(UserPCSystem pc )
+    {
+        int num = 1;
+        System.out.println("Disk list:");
+        for(Disk disk: getDisks())
+        {
+            System.out.println(num+".");
+            disk.printComponentInfo();
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the disk you would like to put in your system: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    pc.setDisk(getDisks().get(command-1));
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
+    }
+    public static void addMotherboard(UserPCSystem pc)
+    {
+        int num = 1;
+        System.out.println("Motherboard list:");
+        for(Motherboard motherboard: getMotherboards())
+        {
+            System.out.println(num+".");
+            motherboard.printComponentInfo();
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the motherboard you would like to put in your system: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    pc.setMotherboard(getMotherboards().get(command-1));
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
+    }
+    public static void addOS(UserPCSystem pc)
+    {
+        int num = 1;
+        System.out.println("OS list:");
+        for(OS os: getOs())
+        {
+            System.out.println(num+".");
+            os.printComponentInfo();
+            num+=1;
+        }
+        int command = -1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the number of the OS you would like to put in your system: ");
+        System.out.println("(0) Go back");
+        while(command != 0)
+        {
+            try
+            {
+                command = scanner.nextInt();
+                if (command == 0)
+                {
+                    System.out.println("Going back.");
+                    break;
+                }
+                else if(command >= 1 && command < num)
+                {
+                    pc.setOs(getOs().get(command-1));
+                    break;
+                }
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("Entered symbol is not a number! Please try again:");
+                scanner.next();
+            }
+        }
     }
 }

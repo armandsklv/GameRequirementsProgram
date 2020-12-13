@@ -1,6 +1,6 @@
 {
   "name": "Cyberpunk 2077",
-  "minimumRequirements": [
+  "minimumRequirements":
     {
       "AmdCpu": "AMD FX-8310",
       "IntelCpu": "Intel Core i5-3570K",
@@ -13,8 +13,8 @@
       "gpuVRAM": 3.0,
       "diskSpace": 70
     }
-  ],
-  "recommendedRequirements": [
+  ,
+  "recommendedRequirements":
     {
       "AmdCpu": "AMD Ryzen 3 3200G",
       "IntelCpu": "Intel Core i7-4790",
@@ -27,5 +27,5 @@
       "gpuVRAM": 6.0,
       "diskSpace": 70
     }
-  ]
+
 }

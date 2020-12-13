@@ -1,20 +1,9 @@
-{
-  "username": "User1",
-  "systems": [{
-    "name": "System1",
-    "cpu": {"cpuManufacturer": "AMD","cpuModel": "Ryzen 5 5600X", "cpuCoreCount": 6, "cpuClockSpeed":  3.7, "cpuBoostSpeed":  4.6, "logicalCoreCount":  12, "overclockPotential": true, "cpuPower": "AVERAGE"},
-    "ram": {"ramAmount": 16, "ramCL": 16, "ramClockSpeed": 3200.0, "ramType": "DDR4", "manufacturer": "Kingston", "model": "HyperX Fury Black"},
-    "os": {"osName": "Windows 10", "osBits": 64},
-    "gpu": {"gpuModel": "GEFORCE RTX 3070", "manufacturer": "NVIDIA", "gpuVRAMAmount": 8.0, "gpuVRAMClockSpeed": 1750.0, "gpuClockSpeed": 1500.0, "gpuBoostClock": 1750.0, "overClockPotential": true, "gpuPower": "AVERAGE"},
-    "motherboard": {"chipsetType":  "B550", "cpuManufacturer": "AMD", "model": "ROG STRIX B550-F GAMING", "manufacturer": "Asus", "socketType": "AM4"},
-    "disk": {"diskModel": "A400", "diskManufacturer": "Kingston", "diskType": "SSD-SATA", "diskSpace": 480}
-  }],
-  "caretakers": [{
-    "name": "System1",
-    "cpu": {"cpuManufacturer": "AMD","cpuModel": "Ryzen 5 5600X", "cpuCoreCount": 6, "cpuClockSpeed":  3.7, "cpuBoostSpeed":  4.6, "logicalCoreCount":  12, "isOverclockable": true},
-    "ram": {"ramAmount": 16, "ramCL": 16, "ramClockSpeed": 3200.0, "ramType": "DDR4", "manufacturer": "Kingston", "model": "HyperX Fury Black"},
-    "os": {"osName": "Windows 10", "osBits": 64},
-    "gpu": {"gpuModel": "GEFORCE RTX 3070", "manufacturer": "NVIDIA", "gpuVRAMAmount": 8.0, "gpuVRAMClockSpeed": 1750.0, "gpuClockSpeed": 1500.0, "gpuBoostClock": 1750.0},
-    "motherboard": {"chipsetType":  "B550", "cpuManufacturer": "AMD", "model": "ROG STRIX B550-F GAMING", "manufacturer": "Asus", "socketType": "AM4"},
-    "disk": {"diskModel": "A400", "diskManufacturer": "Kingston", "diskType": "SSD-SATA", "diskSpace": 960}}]
-}
+{"username":"User1","systems":[{"name":"System1","cpu":{"cpuType": "enthusiast",
+  "cpuManufacturer": "AMD",
+  "cpuModel": "FX-8310",
+  "cpuCoreCount": 4,
+  "cpuClockSpeed": 3.4,
+  "cpuBoostSpeed": 4.3,
+  "logicalCoreCount": 8,
+  "isOverclockable": true,
+  "benchmarkScore": 5215},"ram":{"ramAmount":16,"ramCL":16,"ramClockSpeed":3200.0,"ramType":"DDR4","manufacturer":"Kingston","model":"HyperX Fury Black"},"os":{"osName":"Windows 10","osBits":64},"gpu":{"overclockPotential":false,"gpuType":"consumer","gpuModel":"GeForce GTX 1060","manufacturer":"NVIDIA","gpuVRAMAmount":3.0,"gpuVRAMClockSpeed":2002.0,"gpuClockSpeed":1506.0,"gpuBoostClock":1708.0,"benchmarkScore":9593},"motherboard":{"chipsetType":"B550","cpuManufacturer":"AMD","model":"ROG STRIX B550-F GAMING","manufacturer":"Asus","socketType":"AM4"},"disk":{"diskModel":"A400","diskManufacturer":"Kingston","diskType":"SSD-SATA","diskSpace":480},"checkedGames":[]}],"caretakers":[{"mementoList":[{}]}]}
